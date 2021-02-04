@@ -1,0 +1,56 @@
+#####################
+# GENERAL USER INFO #
+#####################
+
+# Grid search markup:
+#   This main config will be split up in k individual run configs based on list markup [...].
+#   If a single list itself is one argument and should not be splitted, a second list has to be wrapped around it.
+#   Example:
+#     layers: [256, 128, 64]                  -> will be splitted into individual arguments
+#     layers: [[256, 128, 64]]                -> will be kept as one argument
+#     layers: [[256, 128, 64], [256, 64, 32]] -> will be splitted into two arguments, both being a list
+
+
+#####################
+# CONFIG            #
+#####################
+
+in_file: 'data/nyt.json'  # NOTE: Only accessible on request. Contact the paper authors.
+out_dir: '/tmp'
+cache_dir: 'cache'
+
+run_name: ''
+
+bin_by: 'month'  # choices: [null, quarter, month, even]
+bin_size: null   # choices: [null or any int]
+start_date: '2019-09-01'
+end_date: '2020-08-31'
+filtered_sections: [['Politics', 'U.S.', 'Business', 'New York', 'Europe', 'Asia Pacific', 'Health', 'Technology',
+                     'Middle East', 'Science', 'Economy', 'Elections', 'Climate', 'World', 'Africa', 'Australia',
+                     'Canada']]
+
+preprocessing: [['add_whitespace_after_period',
+                 'to_lower',
+                 'remove_stopwords',
+                 'remove_punctuation',
+                 'remove_digits',
+                 'remove_single_chars',
+                 'remove_multi_spaces']]
+
+matrix_type: 'ppmi' # choices: [ppmi, nppmi]
+window_size: 7
+vocab_size: 10000
+
+method: 'A_nn'  # choices: [A_nn, A_rs, A_fw, A_torch, AR_torch]
+
+dim_topic: 10
+one_topic_per_word: true
+
+seed: 42
+lr_a: 0.0001
+lr_a_scaling: 1
+lr_r: 0.001
+a_updates_per_epoch: 1
+r_updates_per_epoch: 1
+num_epochs: 100  # [300, 1000]
+evaluate_every: 100

@@ -27,8 +27,6 @@ share/python-wheels/
 *.egg
 MANIFEST
 
-
-
 # PyInstaller
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
@@ -93,7 +91,7 @@ ipython_config.py
 #   install all needed dependencies.
 #Pipfile.lock
 
-# pyflow
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
 __pypackages__/
 
 # Celery stuff
@@ -130,56 +128,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# DS Store
-.DS_Store
-
-# Idea
-.idea
-
-.vscode
-
-# do not store runs, ie tensorboard files
-runs
-
-
-##############################################
-# C STUFF
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-
-
-build/*
-*.swp
-
-# OS X stuff
-._*
+.idea/

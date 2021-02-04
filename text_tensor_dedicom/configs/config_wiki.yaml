@@ -1,0 +1,50 @@
+#####################
+# GENERAL USER INFO #
+#####################
+
+# Grid search markup:
+#   This main config will be split up in k individual run configs based on list markup [...].
+#   If a single list itself is one argument and should not be splitted, a second list has to be wrapped around it.
+#   Example:
+#     layers: [256, 128, 64]                  -> will be splitted into individual arguments
+#     layers: [[256, 128, 64]]                -> will be kept as one argument
+#     layers: [[256, 128, 64], [256, 64, 32]] -> will be splitted into two arguments, both being a list
+
+
+#####################
+# CONFIG            #
+#####################
+
+in_file: 'data/wiki_soccer_bee_johnnydepp.json'  # choices: []
+out_dir: '/tmp'
+cache_dir: 'cache'
+
+run_name: ''
+
+bin_by: null
+bin_size: null
+
+preprocessing: [['add_whitespace_after_period',
+                 'to_lower',
+                 'remove_stopwords',
+                 'remove_punctuation',
+                 'remove_digits',
+                 'remove_single_chars',
+                 'remove_multi_spaces']]
+matrix_type: 'ppmi' # choices: [ppmi, nppmi]
+window_size: 7
+vocab_size: 10000
+
+method: ['A_torch']  #, 'AR_torch']  # choices: [A_nn, A_rs, A_fw, A_torch, AR_torch]
+
+dim_topic: 6
+one_topic_per_word: true
+
+seed: 42
+lr_a: 0.001
+lr_a_scaling: 1
+lr_r: 0.01
+a_updates_per_epoch: 1
+r_updates_per_epoch: 1
+num_epochs: [100]  # 10000
+evaluate_every: 100
