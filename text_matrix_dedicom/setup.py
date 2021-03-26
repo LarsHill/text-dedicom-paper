@@ -12,7 +12,7 @@ setup(
         'numpy==1.18.1',
         'pandas==1.0.1',
         'pillow==7.0.0',
-        'pyyaml==5.3',
+        'pyyaml==5.4',
         'requests==2.22.0',
         'scikit-learn==0.22.1',
         'scipy==1.4.1',
