@@ -11,7 +11,7 @@ setup(
         'nltk==3.4.5',
         'numpy==1.18.1',
         'pandas==1.0.1',
-        'pillow==7.0.0',
+        'pillow==9.0.0',
         'pyyaml==5.3',
         'requests==2.22.0',
         'scikit-learn==0.22.1',
