@@ -9,7 +9,7 @@ setup(
     install_requires=[
         'matplotlib==3.2.1',
         'nltk==3.4.5',
-        'numpy==1.18.1',
+        'numpy==1.22.0',
         'pandas==1.0.1',
         'pillow==7.0.0',
         'pyyaml==5.3',
